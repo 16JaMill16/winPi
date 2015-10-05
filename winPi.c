@@ -13,7 +13,7 @@
 #include <time.h>
 
 #define NUMBER_OF_THREADS 		8.0
-#define NUMBER_OF_ITERATIONS	1000000000.0
+#define NUMBER_OF_ITERATIONS	10000.0
 #define ITERATIONS_PER_THREAD 	(NUMBER_OF_ITERATIONS / NUMBER_OF_THREADS) * 1.0 
 
 double piMethod(int iteration);
@@ -83,8 +83,10 @@ int main(int argC, char **argV) {
 	printf("\nPi: %.16lf",pi);
 	ReleaseMutex(hScreenMutex);
 	
-	
-	scanf("\nPress any key to exit...\n");
+	int usrExit;
+	printf("\nprint any key to exit...\n");
+	scanf("%d",&usrExit);
+	return 0;
 }
 
 
@@ -99,8 +101,6 @@ void calcOnInterval(void *pThread) {
 	//Divide iterations evenly over all threads
 	int i;
 	for (i = thread * ITERATIONS_PER_THREAD; i < (thread + 1) * ITERATIONS_PER_THREAD; i++) {
-		if (i == 0)
-			i++;
 		
 		localPi += piMethod(i);
 		
@@ -147,7 +147,6 @@ double piMethod(int iteration) {
 	//This method calculates the sigma term for a given iteration number
 	//It allows me to easily change the algorythm I am using
 	double sigmaSegment = 0;
-	sigmaSegment = pow(-1,iteration + 1) / (iteration*2 - 1);
-	sigmaSegment *= 4;
+	sigmaSegment = (2*pow(-1,iteration)*pow(3,.5-iteration))/(2*iteration+1);
 	return sigmaSegment;
 }
