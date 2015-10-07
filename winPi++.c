@@ -1,6 +1,6 @@
 /*==================================================================================================
  *	winPi.c
- *	Author	:	Jared Frenzel
+ *	Author	:	Jared Frenzel and Jacob Miller
  *	Purpose	:	Approximate pi using multiple windows threads
  *	Created	:	October 2, 2015 */
 //==================================================================================================
