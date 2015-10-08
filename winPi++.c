@@ -83,9 +83,9 @@ int main(int argC, char **argV) {
 	printf("\nPi: %.16lf",pi);
 	ReleaseMutex(hScreenMutex);
 	
-	int usrExit;
-	printf("\nprint any key to exit...\n");
-	scanf("%d",&usrExit);
+	char usrExit;
+	printf("\npress any key to exit...\n");
+	scanf(" %c",&usrExit);
 	return 0;
 }
 
