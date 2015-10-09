@@ -11,6 +11,7 @@
 #include <math.h>
 #include <process.h>
 #include <time.h>
+#include "mathUtils.h"
 
 #define NUMBER_OF_THREADS 		8.0
 #define NUMBER_OF_ITERATIONS	10000.0
