@@ -9,8 +9,8 @@
  #include <stdio.h>
  #include "mathUtils.h"
  
-  int getMax(int a, int b);
-  void addition(struct BigNumber *numA, struct BigNumber *numB, struct BigNumber *result);
+
+  
   
 	int main(int argC, char **argV) {
 		int a[] = {1,2,3,4,5,6,7,8,9,7};
@@ -109,5 +109,51 @@
 		}
 	}
 	
+	int getMin(int a, int b) {
+		//Returns the min of the two ints if they are below max length
+		if (a > MAX_ARRAY_LENGTH || b > MAX_ARRAY_LENGTH) {
+			return MAX_ARRAY_LENGTH;
+		}
+		
+		if (a < b) {
+			return a;
+		} else {
+			return b;
+		}
+	}
 	
 	
+	void subtraction(struct BigNumber *numA, struct BigNumber *numB, struct BigNumber *result) {
+	
+		int shiftNum = 0;
+		// finding the decimal place is going to be difficult here since this won't work in most cases.
+		// result->decimalPlace = getMin(numA->decimalPlace,numB->decimalPlace);
+		// I like struct though, that's useful
+		
+		// I think we might have to find it by using a function that takes the lengths of the numbers and their decimal places
+		// and then figures it out from there. The problem is that the decimal place is going to move whenever you get something like 11 - 9 = 2, whereas with 88 - 9 = 79, it doesn't.
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
